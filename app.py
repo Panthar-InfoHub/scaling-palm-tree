@@ -12,13 +12,13 @@ app = FastAPI()
 # Enable CORS for frontend access
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # You can restrict to "http://localhost:3000" later
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Load Hugging Face model and processor
+# Load Hugging Face model and processor 
 model = TFViTForImageClassification.from_pretrained("pantharinfohub/tf_model_face_recognition")
 processor = AutoImageProcessor.from_pretrained("google/vit-base-patch16-224-in21k")
 
